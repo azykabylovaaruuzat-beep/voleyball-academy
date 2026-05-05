@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;family=Space+Grotesk:wght@600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#575959",
+                        "secondary": "#a33e00",
+                        "surface-container-low": "#f6f3f2",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#115cb9",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "surface-variant": "#e5e2e1",
+                        "surface-dim": "#dcd9d9",
+                        "surface-container-high": "#eae7e7",
+                        "secondary-container": "#fe6500",
+                        "inverse-on-surface": "#f3f0ef",
+                        "primary-container": "#0056b3",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-secondary-fixed": "#360f00",
+                        "on-primary-fixed-variant": "#004491",
+                        "primary-fixed-dim": "#acc7ff",
+                        "inverse-surface": "#313030",
+                        "background": "#fcf9f8",
+                        "surface-container-highest": "#e5e2e1",
+                        "outline": "#727784",
+                        "on-background": "#1c1b1b",
+                        "on-primary": "#ffffff",
+                        "primary": "#003f87",
+                        "on-secondary-container": "#541d00",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#7c2e00",
+                        "on-surface": "#1c1b1b",
+                        "tertiary": "#404242",
+                        "on-primary-fixed": "#001a40",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#bbd0ff",
+                        "surface-bright": "#fcf9f8",
+                        "inverse-primary": "#acc7ff",
+                        "on-surface-variant": "#424752",
+                        "outline-variant": "#c2c6d4",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#ffdbcd",
+                        "surface": "#fcf9f8",
+                        "secondary-fixed-dim": "#ffb596",
+                        "on-tertiary-container": "#cfd0d0",
+                        "primary-fixed": "#d7e2ff",
+                        "surface-container": "#f0eded"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-caps": ["Space Grotesk"],
+                        "body-lg": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "label-caps": ["14px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "headline-xl": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .skew-section {
+            clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+        }
+
+        .slant-button {
+            clip-path: polygon(0 0, 92% 0, 100% 100%, 0 100%);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background font-body-md">
+    <!-- TopAppBar -->
+    <header
+        class="sticky top-0 z-50 flex items-center justify-between px-6 h-20 w-full max-w-7xl mx-auto bg-white dark:bg-slate-950 border-b-4 border-blue-700 dark:border-blue-500 shadow-[4px_4px_0px_0px_#EA580C]">
+        <div class="flex items-center gap-2 active:scale-95 transform transition-transform">
+            <span class="material-symbols-outlined text-3xl text-blue-700 dark:text-blue-500"
+                data-icon="sports_volleyball">sports_volleyball</span>
+            <h1 class="text-3xl font-black italic text-blue-700 dark:text-blue-500 tracking-tight font-inter uppercase">
+                SPIKE ELITE</h1>
+        </div>
+        <nav class="hidden md:flex gap-8 font-inter font-black italic tracking-tighter uppercase">
+            <a class="text-slate-900 dark:text-slate-100 hover:text-orange-600 transition-colors" href="./profil.html">PROFILE</a>
+            <a class="text-orange-600 dark:text-orange-500 border-b-4 border-orange-600" href="./galleriy.html">GALLERY</a>
+            <a class="text-slate-900 dark:text-slate-100 hover:text-orange-600 transition-colors" href="./contact.html">CONTACT</a>
+        </nav>
+        <button
+            class="bg-blue-700 text-white px-6 py-2 font-inter font-black italic tracking-tighter uppercase hover:skew-x-[-12deg] hover:bg-orange-600 hover:text-white transition-all duration-200 active:scale-95 transform">
+            GALLERY
+        </button>
+    </header>
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        <!-- Hero Header -->
+        <section class="relative mb-20 overflow-hidden bg-primary p-12 skew-section shadow-[8px_8px_0px_0px_#fe6500]">
+            <div class="relative z-10">
+                <span
+                    class="font-label-caps text-secondary-container bg-primary-container px-4 py-1 inline-block mb-4">LIVE
+                    ACTION FEED</span>
+                <h2 class="font-headline-xl text-white italic uppercase mb-4 leading-none">MOMENTS OF <br /><span
+                        class="text-secondary-container">PURE IMPACT</span></h2>
+                <p class="font-body-lg text-primary-fixed max-w-xl">Experience the explosive verticality and razor-sharp
+                    precision of elite volleyball. High-intensity highlights captured in 4K resolution.</p>
+            </div>
+            <div class="absolute right-0 top-0 w-1/2 h-full opacity-20 pointer-events-none">
+                <span class="material-symbols-outlined text-[300px] text-white rotate-12"
+                    data-icon="sports_volleyball">sports_volleyball</span>
+            </div>
+        </section>
+        <!-- Gallery Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+            <!-- Large Feature Item -->
+            <div
+                class="md:col-span-8 group relative overflow-hidden border-4 border-primary hover:border-secondary-container transition-colors shadow-[8px_8px_0px_0px_#003f87] hover:shadow-[8px_8px_0px_0px_#a33e00]">
+                <img class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110"
+                    data-alt="A professional volleyball player soaring high above the net in a sun-drenched indoor arena. The athlete is frozen in peak vertical leap, arm cocked back for a powerful spike. The lighting is high-contrast, casting sharp shadows on the polished court floor, with a vibrant orange and blue color palette emphasizing the explosive movement and professional athletic intensity."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz0Wh1fS_KKU2mXOQb5YcITPONoXH-f3ADnG6M2ayZpTVbYH3P_y-OQtGte8bpO9EACKsmd3HgEFed7Ygr8CKWihAPtH_TrFvqV17z0ZcMWYq_wK6tRlYGj4cHMxiqmVYrHk4wifh6IQ1bD-mVDiso3y1A-gjTCIqhxPMyKy2RdsrwIjphzRmKFrDd1ji1VHKE8NIGlKcaKrEyctyw3UdZoeoD48A5vLF5vCcEVWnX9hvvLO6ynha7j2UmhtofSYVBjBY5u7rMJSU" />
+                <div
+                    class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white text-6xl"
+                        data-icon="play_circle">play_circle</span>
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 bg-secondary-container text-white p-4 font-label-caps slant-button translate-y-full group-hover:translate-y-0 transition-transform">
+                    CHAMPIONSHIP POINT | 2024
+                </div>
+            </div>
+            <!-- Side Item 1 -->
+            <div
+                class="md:col-span-4 group relative overflow-hidden border-4 border-primary hover:border-secondary-container shadow-[8px_8px_0px_0px_#003f87]">
+                <img class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-110"
+                    data-alt="Close-up shot of a volleyball mid-air, spinning rapidly towards the viewer. The background shows a blurred stadium crowd under cool blue artificial lighting. Sharp orange highlights dance on the ball's surface, creating a high-energy pop-art feel. The atmosphere is electric and focused on technical precision and speed."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHHJVurgSIc5LqEaVqjcvsR0I44QWI8Icpqub4PlT1Lej7a7WTjFiyloChyna320ZavDGlWY95_K3BksEAad4XghVjmvmxTfh5YHgcVx2zKB6hc3ClBEbltSJJ1NYV6tkKm3dzSrfsijAangpsj6LaMCtjFg6Z7GWLn5EIyZb_1HyxTZEbdMOoiVC0iMCwHjxplnpvGAfusp20h6Lz_CWOXXmkxAimHVjUUK1zq-CB9OJpBv5bvkBYzXrhLyYytRdOMdPDI9RB12s" />
+                <div
+                    class="absolute inset-0 bg-secondary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                    <p class="font-headline-md text-white italic uppercase">The Setup</p>
+                </div>
+            </div>
+            <!-- Grid Row 2 -->
+            <div
+                class="md:col-span-4 group relative overflow-hidden border-4 border-primary shadow-[8px_8px_0px_0px_#003f87]">
+                <img class="w-full h-[400px] object-cover"
+                    data-alt="An athlete lunging across a blue court floor for a defensive dig. Beads of sweat are visible under the intense overhead arena lights. The image is styled with heavy grain and high contrast, using a deep primary blue background and striking orange borders to isolate the gritty, determined action of the player."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfX6OIjtmm3fW568y5j5594hs8C04H30WT_FuBgjbTfhyXcEaL50e28hL72p1550DRB53XQp9AxHMfu6Tb_qM1bjuQrJxfTnl6na_1K5pzULFBrqDlSjHXxaQQ46bsqF8Fva382J9U924pF1RL4nqNDre2LSR-irPs7Hwdbv-qt0Po-R-aP1uUOaGu8AwHrzvkmt647whuNpj23Ft4g-pEYsth6SznHa4hmeSGaQaTSYyqyCUhWUm7L_J7CLdQAKY5mNCimNxJAUw" />
+                <div class="absolute top-4 right-4 bg-primary text-white p-2 font-label-caps">DEFENSE</div>
+            </div>
+            <div
+                class="md:col-span-4 group relative overflow-hidden border-4 border-primary shadow-[8px_8px_0px_0px_#003f87]">
+                <img class="w-full h-[400px] object-cover"
+                    data-alt="A cinematic low-angle shot of two blockers at the net, their hands perfectly aligned to stop a spike. The lighting is dramatic, silhouette-style against a bright orange stadium backdrop. The composition is asymmetrical and dynamic, capturing the architectural beauty and raw power of the sport's defensive peak."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDThWQs4J7fNK0lhH9C4LtOWl--PqyDuyTeV3UFnfLfzKv1bkfD0ja54sS8pE7v4T2Z1VwkAMhgysGj2GIk9XrKvtCoOpP1Qr0VYkXvBu12Cf4dzZbfS8-n9zt-MrZhKQ24wkhMxL-b7nkk-rJBysXqzRcBS_XTln9TgGv-JjLoR4KhK6TfhoGmS5zFfi9kIm1fsMDn_Nh2eI9BTlK9lzNcjELKKqy6OMK3VBBsI9jDtLTEXUpvKk6mD2w_shzir4FflXJi9e8MpvU" />
+                <div class="absolute inset-0 bg-primary/20 hover:bg-transparent transition-colors"></div>
+            </div>
+            <div
+                class="md:col-span-4 group relative overflow-hidden border-4 border-primary shadow-[8px_8px_0px_0px_#003f87]">
+                <img class="w-full h-[400px] object-cover"
+                    data-alt="A celebratory team huddle in a blurred volleyball stadium. The players' jerseys are vibrant blue with orange accents. High-key lighting makes the scene feel triumphant and warm. The mood is one of victory and elite performance, framed by sharp geometric borders that reflect the brand's precision-focused identity."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpVTsgDgdsQ5U2mWnxd5pRKoYCxb5f1LyNvnctNBV5YoLtoPqgWEZQGhIYWbti5_Y7qu3KjrVI0iVQGEqLtC-YSaLbpQ0gVD-4NEcLfDL_7UwL1UJ3Cwj0-8iMEgx8Xx1jjBJs7mDfTaNktrS_4ge2TlJSPOX8UVKotQJqL_sI8fXiu3MZF6ZKdOLwGS1HIa_PXchgVvSBMkDGcLhKzfKPRyLNbk7yCQiRdjv0PTpKzmn_rij_iWnqFmZACWabn30xwK-cPjF7INU" />
+                <div class="absolute bottom-4 left-4 flex gap-2">
+                    <span class="bg-secondary-container text-white px-3 py-1 font-label-caps">NEW</span>
+                    <span class="bg-primary text-white px-3 py-1 font-label-caps">FEATURED</span>
+                </div>
+            </div>
+        </div>
+        <!-- Call to Action Section -->
+        <section
+            class="mt-20 flex flex-col md:flex-row items-center gap-8 bg-surface-container-high p-8 border-l-8 border-secondary-container">
+            <div class="flex-1">
+                <h3 class="font-headline-lg text-primary italic uppercase mb-2">WANT THE FULL REEL?</h3>
+                <p class="font-body-md text-on-surface-variant">Join the Spike Elite Inner Circle to access exclusive 8K
+                    footage, technical breakdowns, and behind-the-scenes content from our pro camp.</p>
+            </div>
+            <button
+                class="bg-secondary-container text-white px-10 py-5 font-headline-md italic uppercase slant-button hover:bg-primary transition-all shadow-[6px_6px_0px_0px_#003f87] active:translate-x-1 active:translate-y-1 active:shadow-none">
+                GET ELITE ACCESS
+            </button>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-blue-700 dark:bg-blue-900 border-t-8 border-orange-600">
+        <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-white font-black italic"
+                data-icon="sports_volleyball">sports_volleyball</span>
+            <span class="text-white font-black italic text-xl tracking-tight font-inter uppercase">SPIKE ELITE</span>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6">
+            <a class="font-inter font-bold uppercase tracking-widest text-xs text-blue-100 opacity-80 hover:opacity-100 hover:text-orange-400 transition-colors"
+                href="./profil.html">PROFILE</a>
+            <a class="font-inter font-bold uppercase tracking-widest text-xs text-white underline decoration-4 decoration-orange-600"
+                href="./galleriy.html">GALLERY</a>
+            <a class="font-inter font-bold uppercase tracking-widest text-xs text-blue-100 opacity-80 hover:opacity-100 hover:text-orange-400 transition-colors"
+                href="./index.html">index</a>
+            <a class="font-inter font-bold uppercase tracking-widest text-xs text-blue-100 opacity-80 hover:opacity-100 hover:text-orange-400 transition-colors"
+                href="./contact.html">contact</a>
+        </div>
+        <div
+            class="text-blue-100 opacity-80 font-inter font-bold uppercase tracking-widest text-xs text-center md:text-right">
+            © 2024 VOLLEYBALL ELITE. POWERED BY PRECISION.
+        </div>
+    </footer>
+</body>
+
+</html>

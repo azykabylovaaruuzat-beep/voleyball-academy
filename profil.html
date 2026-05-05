@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;family=Space+Grotesk:wght@600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#575959",
+                        "secondary": "#a33e00",
+                        "surface-container-low": "#f6f3f2",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#115cb9",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "surface-variant": "#e5e2e1",
+                        "surface-dim": "#dcd9d9",
+                        "surface-container-high": "#eae7e7",
+                        "secondary-container": "#fe6500",
+                        "inverse-on-surface": "#f3f0ef",
+                        "primary-container": "#0056b3",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-secondary-fixed": "#360f00",
+                        "on-primary-fixed-variant": "#004491",
+                        "primary-fixed-dim": "#acc7ff",
+                        "inverse-surface": "#313030",
+                        "background": "#fcf9f8",
+                        "surface-container-highest": "#e5e2e1",
+                        "outline": "#727784",
+                        "on-background": "#1c1b1b",
+                        "on-primary": "#ffffff",
+                        "primary": "#003f87",
+                        "on-secondary-container": "#541d00",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#7c2e00",
+                        "on-surface": "#1c1b1b",
+                        "tertiary": "#404242",
+                        "on-primary-fixed": "#001a40",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#bbd0ff",
+                        "surface-bright": "#fcf9f8",
+                        "inverse-primary": "#acc7ff",
+                        "on-surface-variant": "#424752",
+                        "outline-variant": "#c2c6d4",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#ffdbcd",
+                        "surface": "#fcf9f8",
+                        "secondary-fixed-dim": "#ffb596",
+                        "on-tertiary-container": "#cfd0d0",
+                        "primary-fixed": "#d7e2ff",
+                        "surface-container": "#f0eded"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-caps": ["Space Grotesk"],
+                        "body-lg": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "label-caps": ["14px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "headline-xl": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .diagonal-bg {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+
+        .diagonal-card {
+            clip-path: polygon(0 0, 95% 0, 100% 100%, 0% 100%);
+        }
+
+        .slanted-button {
+            clip-path: polygon(0 0, 92% 0, 100% 100%, 0% 100%);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background font-body-md">
+    <!-- TopAppBar -->
+    <header
+        class="sticky top-0 z-50 bg-white dark:bg-slate-950 border-b-4 border-blue-700 dark:border-blue-500 shadow-[4px_4px_0px_0px_#EA580C]">
+        <div class="sticky top-0 z-50 flex items-center justify-between px-6 h-20 w-full max-w-7xl mx-auto">
+            <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-3xl text-blue-700 dark:text-blue-500"
+                    data-icon="sports_volleyball">sports_volleyball</span>
+                <h1
+                    class="text-3xl font-black italic text-blue-700 dark:text-blue-500 tracking-tight font-inter uppercase">
+                    SPIKE ELITE</h1>
+            </div>
+            <nav class="hidden md:flex gap-8 items-center font-inter font-black italic tracking-tighter uppercase">
+                <a class="text-orange-600 dark:text-orange-500 border-b-4 border-orange-600 active:scale-95 transform transition-transform"
+                    href="./profil.html">PROFILE</a>
+                <a class="text-slate-900 dark:text-slate-100 hover:text-orange-600 transition-colors hover:skew-x-[-12deg] active:scale-95 transform transition-transform"
+                    href="./galleriy.html">GALLERY</a>
+                <a class="text-slate-900 dark:text-slate-100 hover:text-orange-600 transition-colors hover:skew-x-[-12deg] active:scale-95 transform transition-transform"
+                    href="./index.html">index</a>
+                <a class="text-slate-900 dark:text-slate-100 hover:text-orange-600 transition-colors hover:skew-x-[-12deg] active:scale-95 transform transition-transform"
+                    href="./contact.html">CONTACT</a>
+            </nav>
+            <button
+                class="bg-blue-700 text-white px-6 py-2 font-inter font-black italic tracking-tighter uppercase hover:skew-x-[-12deg] hover:bg-orange-600 transition-all duration-200 active:scale-95 transform">
+                GALLERY
+            </button>
+        </div>
+    </header>
+    <main class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-12">
+        <!-- Hero Profile Section -->
+        <section class="relative grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20 items-end">
+            <div class="lg:col-span-5 relative z-10">
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-full h-full bg-secondary-container z-0"></div>
+                    <img alt="Player Portrait"
+                        class="relative z-10 w-full grayscale-[0.2] contrast-125 object-cover aspect-[4/5] border-4 border-white"
+                        data-alt="A powerful action shot of a professional male volleyball player in a dynamic mid-air spike position. He wears a vibrant blue and orange team jersey, muscles tense with athletic precision. The lighting is dramatic and high-contrast, highlighting the textures of the court and the player's intensity against a blurred stadium background. The overall aesthetic is energetic, high-performance, and professionally focused."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEfjinWfcOg4cBxurb34d0XIBzTRrvawlyzmV6GOekIn7UWwnAZNmt7AidpyERzCWyFT9-WOBhvsfQPgmOZljHpacZYJj2tlMAGJES2-VJOV-Kb4yDgouMFjW4gd66Z5ENCrWx8I_nZQt_SUkAu6s9M5lwl772yUy_pvcm_QhSA51sz5PQaz2_YgL5SJGk5X_6D_8RXG5o2l5zoKZt4Llr0ZpmK18YwFBVn08X_oq6EOwmPH13_yflhbOQDOQ2eW_faCOYk4IjNd0" />
+                </div>
+            </div>
+            <div class="lg:col-span-7 pb-4">
+                <span class="inline-block bg-primary text-white font-label-caps text-label-caps px-4 py-1 mb-4">NATIONAL
+                    TEAM D1</span>
+                <h2 class="font-headline-xl text-headline-xl text-primary italic mb-2">MARCUS REYES</h2>
+                <div class="flex gap-4 mb-8">
+                    <div class="bg-white p-4 border-l-8 border-secondary-container shadow-[8px_8px_0px_0px_#003f87]">
+                        <p class="font-label-caps text-label-caps text-outline uppercase">Position</p>
+                        <p class="font-headline-md text-headline-md text-primary italic">OUTSIDE HITTER</p>
+                    </div>
+                    <div class="bg-white p-4 border-l-8 border-secondary-container shadow-[8px_8px_0px_0px_#003f87]">
+                        <p class="font-label-caps text-label-caps text-outline uppercase">Jersey</p>
+                        <p class="font-headline-md text-headline-md text-primary italic">#07</p>
+                    </div>
+                </div>
+                <p class="font-body-lg text-body-lg max-w-xl text-on-surface-variant leading-relaxed">
+                    Dominating the net with a lethal combination of explosive verticality and technical finesse. Known
+                    for high-pressure performance and strategic court awareness.
+                </p>
+            </div>
+        </section>
+        <!-- Stats & Bio Dynamic Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+            <!-- Bio Section -->
+            <div class="md:col-span-2 bg-white p-10 border-2 border-primary relative overflow-hidden">
+                <div
+                    class="absolute top-0 right-0 w-24 h-24 bg-secondary-container/10 -rotate-12 translate-x-12 -translate-y-12">
+                </div>
+                <h3
+                    class="font-headline-lg text-headline-lg text-primary italic mb-6 border-b-4 border-secondary-container inline-block">
+                    ABOUT ME</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
+                    With over 8 years of elite-level competition, I have cultivated a reputation as a decisive offensive
+                    force. My journey began in Southern California, moving through rigorous collegiate programs to
+                    professional circuits in Europe. I specialize in high-velocity serves and deep-corner kills.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <button
+                        class="slanted-button bg-secondary-container text-white px-8 py-3 font-label-caps text-label-caps hover:bg-primary transition-colors active:scale-95 transform">DOWNLOAD
+                        SCOUTING REPORT</button>
+                    <button
+                        class="slanted-button bg-primary text-white px-8 py-3 font-label-caps text-label-caps hover:bg-secondary transition-colors active:scale-95 transform shadow-[4px_4px_0px_0px_#fe6500]">VIEW
+                        REEL</button>
+                </div>
+            </div>
+            <!-- Vertical Stats -->
+            <div class="flex flex-col gap-4">
+                <div
+                    class="bg-primary text-white p-6 flex flex-col justify-center items-center shadow-[4px_4px_0px_0px_#fe6500]">
+                    <span class="font-label-caps text-label-caps opacity-80 mb-1">HEIGHT</span>
+                    <span class="font-headline-xl text-headline-xl italic">6'5"</span>
+                </div>
+                <div
+                    class="bg-secondary-container text-white p-6 flex flex-col justify-center items-center shadow-[4px_4px_0px_0px_#003f87]">
+                    <span class="font-label-caps text-label-caps opacity-80 mb-1">VERTICAL</span>
+                    <span class="font-headline-xl text-headline-xl italic">42"</span>
+                </div>
+                <div class="bg-white border-2 border-primary p-6 flex flex-col justify-center items-center">
+                    <span class="font-label-caps text-label-caps text-primary mb-1">REACH</span>
+                    <span class="font-headline-xl text-headline-xl text-primary italic">11'9"</span>
+                </div>
+            </div>
+        </div>
+        <!-- Career Highlights Bento -->
+        <section>
+            <h3 class="font-headline-lg text-headline-lg text-primary italic mb-10 text-center">CAREER HIGHLIGHTS</h3>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <!-- Highlight 1 -->
+                <div class="md:col-span-2 md:row-span-2 relative group overflow-hidden border-4 border-primary">
+                    <img alt="Championship"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        data-alt="A wide-angle shot of a stadium crowd cheering during a high-stakes volleyball championship match. The atmosphere is electric with bright spotlights cutting through a light haze. The blue and orange team colors are reflected in the fans' apparel and stadium banners. High-contrast, cinematic sports photography style."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYLVR3wYB9aiSu3u9P6oTo9sWtDcMMsQsOP0_mUXCPe5SB_o275ftb3d3TGyaScBQFT9WPO4udhTwac22BqsEi1fzYFRr_IFAG5MZUKtQmnLa_4ivxlEnnmZiEhdWoVEsyRRivV2IzP10iYcCvTVbY1naFhL05EzLcBYce-pQpdAt_Op8uGn_vkGMYLnaeh1SR8oGUvPqBK_q3WxNj1L_QL-h4Pfqe2RVabfvs4FOsyOKBELwmoGjrTM2lrlpKU62Ev4QCNyF3mts" />
+                    <div
+                        class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-primary to-transparent text-white">
+                        <span class="font-label-caps text-label-caps text-secondary-container">2023 SEASON</span>
+                        <h4 class="font-headline-md text-headline-md italic uppercase">MVP: NATIONAL FINALS</h4>
+                    </div>
+                </div>
+                <!-- Highlight 2 -->
+                <div class="bg-surface-container-high border-b-8 border-secondary-container p-6">
+                    <span class="material-symbols-outlined text-secondary-container text-4xl mb-4"
+                        data-icon="military_tech">military_tech</span>
+                    <h4 class="font-headline-md text-headline-md text-primary mb-2">ALL-AMERICAN</h4>
+                    <p class="font-body-md text-body-md opacity-70">First-team selection for three consecutive
+                        collegiate years.</p>
+                </div>
+                <!-- Highlight 3 -->
+                <div class="bg-primary text-white p-6 relative">
+                    <div class="absolute top-4 right-4">
+                        <span class="material-symbols-outlined text-secondary-container" data-icon="star"
+                            style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <h4 class="font-headline-md text-headline-md italic mb-2">342 KILLS</h4>
+                    <p class="font-body-md text-body-md opacity-80 uppercase tracking-widest">Single Season Record</p>
+                </div>
+                <!-- Highlight 4 -->
+                <div class="md:col-span-2 bg-secondary-container text-white p-6 flex items-center justify-between">
+                    <div>
+                        <h4 class="font-headline-md text-headline-md italic mb-1">EURO PRO LEAGUE</h4>
+                        <p class="font-body-md text-body-md opacity-90 uppercase">Berlin, Germany | 2021-2022</p>
+                    </div>
+                    <span class="material-symbols-outlined text-5xl" data-icon="public">public</span>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-blue-700 dark:bg-blue-900 border-t-8 border-orange-600">
+        <div class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto">
+            <div class="flex flex-col items-center md:items-start gap-2">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-orange-500 text-3xl"
+                        data-icon="sports_volleyball">sports_volleyball</span>
+                    <span class="text-white font-black italic text-2xl font-inter uppercase">SPIKE ELITE</span>
+                </div>
+                <p class="font-inter font-bold uppercase tracking-widest text-xs text-blue-100 opacity-80">© 2024
+                    VOLLEYBALL ELITE. POWERED BY PRECISION.</p>
+            </div>
+            <nav class="flex gap-8">
+                <a class="font-inter font-bold uppercase tracking-widest text-xs text-white underline decoration-4 decoration-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    href="#">PROFILE</a>
+                <a class="font-inter font-bold uppercase tracking-widest text-xs text-blue-100 opacity-80 hover:opacity-100 hover:text-orange-400 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    href="#">GALLERY</a>
+                <a class="font-inter font-bold uppercase tracking-widest text-xs text-blue-100 opacity-80 hover:opacity-100 hover:text-orange-400 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    href="#">STATS</a>
+                <a class="font-inter font-bold uppercase tracking-widest text-xs text-blue-100 opacity-80 hover:opacity-100 hover:text-orange-400 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500"
+                    href="#">CONTACT</a>
+            </nav>
+            <div class="flex gap-4">
+                <div
+                    class="w-10 h-10 flex items-center justify-center border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white transition-all cursor-pointer">
+                    <span class="material-symbols-outlined text-xl" data-icon="share">share</span>
+                </div>
+                <div
+                    class="w-10 h-10 flex items-center justify-center border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white transition-all cursor-pointer">
+                    <span class="material-symbols-outlined text-xl" data-icon="mail">mail</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

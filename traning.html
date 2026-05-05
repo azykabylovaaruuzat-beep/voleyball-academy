@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;family=Space+Grotesk:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#575959",
+                        "secondary": "#a33e00",
+                        "surface-container-low": "#f6f3f2",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#115cb9",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "surface-variant": "#e5e2e1",
+                        "surface-dim": "#dcd9d9",
+                        "surface-container-high": "#eae7e7",
+                        "secondary-container": "#fe6500",
+                        "inverse-on-surface": "#f3f0ef",
+                        "primary-container": "#0056b3",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-secondary-fixed": "#360f00",
+                        "on-primary-fixed-variant": "#004491",
+                        "primary-fixed-dim": "#acc7ff",
+                        "inverse-surface": "#313030",
+                        "background": "#fcf9f8",
+                        "surface-container-highest": "#e5e2e1",
+                        "outline": "#727784",
+                        "on-background": "#1c1b1b",
+                        "on-primary": "#ffffff",
+                        "primary": "#003f87",
+                        "on-secondary-container": "#541d00",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#7c2e00",
+                        "on-surface": "#1c1b1b",
+                        "tertiary": "#404242",
+                        "on-primary-fixed": "#001a40",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#bbd0ff",
+                        "surface-bright": "#fcf9f8",
+                        "inverse-primary": "#acc7ff",
+                        "on-surface-variant": "#424752",
+                        "outline-variant": "#c2c6d4",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#ffdbcd",
+                        "surface": "#fcf9f8",
+                        "secondary-fixed-dim": "#ffb596",
+                        "on-tertiary-container": "#cfd0d0",
+                        "primary-fixed": "#d7e2ff",
+                        "surface-container": "#f0eded"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-desktop": "48px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-caps": ["Space Grotesk"],
+                        "body-lg": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "label-caps": ["14px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "headline-xl": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .diagonal-bg {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .diagonal-card {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 8% 100%);
+        }
+
+        .slant-btn {
+            clip-path: polygon(0 0, 92% 0, 100% 100%, 0 100%);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .grid-pattern {
+            background-image: radial-gradient(#e5e2e1 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-surface font-body-md text-on-surface selection:bg-secondary-container selection:text-white overflow-x-hidden">
+    <!-- TopAppBar -->
+    <header
+        class="sticky top-0 z-50 bg-white dark:bg-slate-950 border-b-4 border-blue-700 dark:border-blue-500 shadow-[4px_4px_0px_0px_#EA580C]">
+        <div class="flex items-center justify-between px-6 h-20 w-full max-w-7xl mx-auto">
+            <div class="flex items-center gap-3 active:scale-95 transform transition-transform cursor-pointer">
+                <span class="material-symbols-outlined text-blue-700 dark:text-blue-500 text-3xl"
+                    data-icon="sports_volleyball">sports_volleyball</span>
+                <h1
+                    class="text-3xl font-black italic text-blue-700 dark:text-blue-500 tracking-tight font-inter uppercase">
+                    SPIKE ELITE</h1>
+            </div>
+            <nav class="hidden md:flex items-center gap-8 font-inter font-black italic tracking-tighter uppercase">
+                <a class="text-orange-600 dark:text-orange-500 border-b-4 border-orange-600 transition-all"
+                    href="#">TRAINING</a>
+                <a class="text-slate-900 dark:text-slate-100 hover:text-orange-600 transition-colors" href="#">STATS</a>
+                <a class="text-slate-900 dark:text-slate-100 hover:text-orange-600 transition-colors"
+                    href="#">GALLERY</a>
+                <a class="text-slate-900 dark:text-slate-100 hover:text-orange-600 transition-colors"
+                    href="#">PROFILE</a>
+            </nav>
+            <button
+                class="bg-blue-700 text-white px-6 py-2 font-inter font-black italic uppercase tracking-tighter hover:skew-x-[-12deg] hover:bg-orange-600 transition-all duration-200 active:scale-95">
+                GALLERY
+            </button>
+        </div>
+    </header>
+    <main class="min-h-screen">
+        <!-- Hero Section with Diagonal Cut -->
+        <section class="relative bg-primary py-24 diagonal-bg overflow-hidden">
+            <div class="absolute inset-0 opacity-10 grid-pattern"></div>
+            <div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="w-full md:w-1/2">
+                        <span
+                            class="inline-block bg-secondary-container text-white font-label-caps px-4 py-1 mb-6">ELITE
+                            LEVEL</span>
+                        <h2 class="text-white font-headline-xl uppercase italic mb-6">DOMINATE THE <span
+                                class="text-secondary-container">COURT.</span></h2>
+                        <p class="text-primary-fixed font-body-lg mb-8 max-w-xl">Precision is the difference between a
+                            point and a loss. Elevate your tactical awareness and physical explosive power with our
+                            elite training modules.</p>
+                        <button
+                            class="slant-btn bg-secondary-container text-white px-10 py-5 font-headline-md italic uppercase shadow-[8px_8px_0px_0px_#001a40] hover:shadow-none transition-all active:scale-95">
+                            Book a Session
+                        </button>
+                    </div>
+                    <div class="w-full md:w-1/2 relative">
+                        <div class="border-8 border-white shadow-[12px_12px_0px_0px_#fe6500] rotate-2 overflow-hidden">
+                            <img alt="Professional volleyball player in action" class="w-full h-96 object-cover"
+                                data-alt="A professional volleyball player captured in a high-action jump serve during an intense match. The lighting is dramatic and high-contrast, highlighting the athlete's focused expression and powerful muscle definition. The background is a slightly blurred, modern indoor arena with vibrant blue and orange stadium seating. The overall aesthetic is energetic, technical, and high-performance, matching a premium athletic brand."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0Icnyro_AQCs0xXSkaiOMvsj1QX_6h5T-J9NqRxvUHzjzAnfm3a2-329VJ24sLerrdYKbbsHm6zuwvrYiF-Byadl8QH15NUagPUNpRfVVUKCr5mbvOpO4sL_nBFmJOeVFfp_2JD8HRzPV5FIer7v51ZpEZzWoFmAFJRqlZy_vM7M-5xZMgW6KQySlrzFeapjDPsGBHWv-a4vpgt6IbS1czqvzJxMRdyx4QxEaSXX6FQISJvaz_6_K8Pgv3xkF__7WqarJvysSsKY" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Skill Cards Grid -->
+        <section class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-24">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-l-8 border-primary pl-6">
+                <div>
+                    <h3 class="font-headline-lg uppercase italic text-primary">Core Disciplines</h3>
+                    <p class="text-outline font-body-md">Master the mechanics of professional play.</p>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <span class="font-label-caps text-secondary font-bold">TOTAL SKILLS: 08</span>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Skill 1: Power Serving -->
+                <div
+                    class="group bg-white border-2 border-primary p-8 shadow-[8px_8px_0px_0px_#fe6500] hover:translate-y-[-4px] transition-transform flex flex-col h-full relative overflow-hidden">
+                    <div
+                        class="absolute -top-4 -right-4 w-24 h-24 bg-primary-fixed opacity-10 rounded-full group-hover:scale-150 transition-transform duration-500">
+                    </div>
+                    <div class="mb-6 flex items-center justify-between">
+                        <div class="w-16 h-16 bg-primary flex items-center justify-center text-white">
+                            <span class="material-symbols-outlined text-4xl" data-icon="bolt">bolt</span>
+                        </div>
+                        <span class="font-headline-md text-surface-variant italic">01</span>
+                    </div>
+                    <h4 class="font-headline-md uppercase italic mb-4 text-primary">Power Serving</h4>
+                    <p class="text-on-surface-variant font-body-md mb-8 flex-grow">Advanced jump serve techniques
+                        focusing on ball compression, velocity vectors, and deceptive placement.</p>
+                    <div class="space-y-2">
+                        <div class="flex justify-between font-label-caps text-xs">
+                            <span>MASTERY</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="w-full bg-surface-container h-3 border border-outline-variant">
+                            <div class="bg-secondary-container h-full" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Skill 2: Defensive Digging -->
+                <div
+                    class="group bg-white border-2 border-primary p-8 shadow-[8px_8px_0px_0px_#003f87] hover:translate-y-[-4px] transition-transform flex flex-col h-full relative overflow-hidden">
+                    <div
+                        class="absolute -top-4 -right-4 w-24 h-24 bg-secondary-fixed opacity-20 rounded-full group-hover:scale-150 transition-transform duration-500">
+                    </div>
+                    <div class="mb-6 flex items-center justify-between">
+                        <div class="w-16 h-16 bg-secondary-container flex items-center justify-center text-white">
+                            <span class="material-symbols-outlined text-4xl" data-icon="shield">shield</span>
+                        </div>
+                        <span class="font-headline-md text-surface-variant italic">02</span>
+                    </div>
+                    <h4 class="font-headline-md uppercase italic mb-4 text-primary">Defensive Digging</h4>
+                    <p class="text-on-surface-variant font-body-md mb-8 flex-grow">Reaction time drills, floor coverage
+                        mechanics, and technical platform stability under high-velocity attacks.</p>
+                    <div class="space-y-2">
+                        <div class="flex justify-between font-label-caps text-xs">
+                            <span>MASTERY</span>
+                            <span>92%</span>
+                        </div>
+                        <div class="w-full bg-surface-container h-3 border border-outline-variant">
+                            <div class="bg-primary h-full" style="width: 92%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Skill 3: Setter Precision -->
+                <div
+                    class="group bg-white border-2 border-primary p-8 shadow-[8px_8px_0px_0px_#fe6500] hover:translate-y-[-4px] transition-transform flex flex-col h-full relative overflow-hidden">
+                    <div
+                        class="absolute -top-4 -right-4 w-24 h-24 bg-primary-fixed opacity-10 rounded-full group-hover:scale-150 transition-transform duration-500">
+                    </div>
+                    <div class="mb-6 flex items-center justify-between">
+                        <div class="w-16 h-16 bg-primary flex items-center justify-center text-white">
+                            <span class="material-symbols-outlined text-4xl" data-icon="target">target</span>
+                        </div>
+                        <span class="font-headline-md text-surface-variant italic">03</span>
+                    </div>
+                    <h4 class="font-headline-md uppercase italic mb-4 text-primary">Setter Precision</h4>
+                    <p class="text-on-surface-variant font-body-md mb-8 flex-grow">Technical finger positioning, ball
+                        tempo control, and offensive distribution strategies for high-stakes play.</p>
+                    <div class="space-y-2">
+                        <div class="flex justify-between font-label-caps text-xs">
+                            <span>MASTERY</span>
+                            <span>78%</span>
+                        </div>
+                        <div class="w-full bg-surface-container h-3 border border-outline-variant">
+                            <div class="bg-secondary-container h-full" style="width: 78%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Stats Counter / Highlight Section -->
+        <section class="bg-surface-container-low py-20 relative overflow-hidden">
+            <div
+                class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-2 md:grid-cols-4 gap-12 text-center relative z-10">
+                <div class="border-l-4 border-secondary-container pl-4 text-left">
+                    <div class="font-headline-xl text-primary italic leading-none">120+</div>
+                    <div class="font-label-caps text-on-surface-variant mt-2">SESSIONS COMPLETED</div>
+                </div>
+                <div class="border-l-4 border-secondary-container pl-4 text-left">
+                    <div class="font-headline-xl text-primary italic leading-none">15</div>
+                    <div class="font-label-caps text-on-surface-variant mt-2">ELITE MODULES</div>
+                </div>
+                <div class="border-l-4 border-secondary-container pl-4 text-left">
+                    <div class="font-headline-xl text-primary italic leading-none">98</div>
+                    <div class="font-label-caps text-on-surface-variant mt-2">WIN PERCENTAGE</div>
+                </div>
+                <div class="border-l-4 border-secondary-container pl-4 text-left">
+                    <div class="font-headline-xl text-primary italic leading-none">24/7</div>
+                    <div class="font-label-caps text-on-surface-variant mt-2">VIDEO ANALYSIS</div>
+                </div>
+            </div>
+        </section>
+        <!-- Dynamic Training Section -->
+        <section class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-24">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="w-full lg:w-1/2 grid grid-cols-2 gap-4">
+                    <div class="h-64 border-4 border-primary overflow-hidden hover:skew-y-2 transition-transform">
+                        <img alt="Training drill image 1" class="w-full h-full object-cover"
+                            data-alt="A close-up shot of a volleyball player's hands perfectly forming a setting position, contacting the ball in a bright, professionally lit gym. The focus is sharp on the technical finger placement and the texture of the ball. The lighting is crisp and cool, creating high-contrast shadows that emphasize the athletic movement and precision of the play."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBALDj7Xnt71-jwGljGkgoVhMpV22WtP989PpRzQImgpsLe7uTIokNDj9KqUfUHs28pS3dGXh_gVo-6rvBwbRRykrRyHMUAfAFLktk5HSNaXOZP7SdkXobo0bh0YkT9SDWHIli4066y_wRXD2iHeXuN4PYGrq5wEM02131qyNd2s1iXyl0-gnEHNGx-2WeSzZxApFjzHLcgk3pRV7fjkt7_pxB1OdgYTLLHSNPGhycN0TImICiQaQYnM329L9KrJddF33z8h7ohL7w" />
+                    </div>
+                    <div
+                        class="h-64 border-4 border-secondary-container overflow-hidden translate-y-8 hover:-skew-y-2 transition-transform">
+                        <img alt="Training drill image 2" class="w-full h-full object-cover"
+                            data-alt="A dynamic wide shot of an athlete performing a diving dig on a sand court during an outdoor training session. The sun is low in the sky, creating long, dramatic shadows and a warm, golden-hour glow. The sand is kicked up in a beautiful, frozen-in-time spray. The overall color scheme is vibrant and energetic, blending deep blue skies with warm orange sand."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6as6M2gfqZc5WFN2ITjFpRI06po5d8pAo6U4tENJGGjsL6QaleXRlqe3iab19j6rUOZ_16tdsI0UsAgALp_QpjyWHV-lMxoIl6GUZMxTesps_yRkrrAQAFqnf4L9bKeqDwMDbltZl-BXsjlk6nHev2tR8KMF5vL-hEhAzDq5N1u1KXnqnakMaZ6HoFqAUY5g3gREa52suoxyAYoFlBHxNURWbh9teAiH68fxpDepnnY3fCqrgOnYB06I-tP-RllP2jB2DhZ6_quQ" />
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2">
+                    <h3 class="font-headline-lg uppercase italic text-primary mb-6">Master the <br /><span
+                            class="text-secondary-container">Technical Breakdown</span></h3>
+                    <p class="font-body-lg text-on-surface-variant mb-8">Every movement is analyzed using high-speed
+                        capture and biometric feedback. We don't just train harder; we train smarter. Join the elite who
+                        understand the physics of the game.</p>
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center gap-4 border-b border-surface-container-highest pb-4">
+                            <span class="material-symbols-outlined text-secondary-container font-bold"
+                                data-icon="check_circle">check_circle</span>
+                            <span class="font-label-caps">FRAME-BY-FRAME BIOMECHANICS</span>
+                        </li>
+                        <li class="flex items-center gap-4 border-b border-surface-container-highest pb-4">
+                            <span class="material-symbols-outlined text-secondary-container font-bold"
+                                data-icon="check_circle">check_circle</span>
+                            <span class="font-label-caps">INDIVIDUALIZED LOAD MANAGEMENT</span>
+                        </li>
+                        <li class="flex items-center gap-4 border-b border-surface-container-highest pb-4">
+                            <span class="material-symbols-outlined text-secondary-container font-bold"
+                                data-icon="check_circle">check_circle</span>
+                            <span class="font-label-caps">TACTICAL OFFENSIVE MAPPING</span>
+                        </li>
+                    </ul>
+                    <button
+                        class="bg-primary text-white px-8 py-4 font-headline-md italic uppercase shadow-[4px_4px_0px_0px_#fe6500] hover:shadow-none transition-all active:scale-95">
+                        Schedule Evaluation
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-blue-700 dark:bg-blue-900 border-t-8 border-orange-600">
+        <div class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto">
+            <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-orange-500 text-4xl"
+                    data-icon="sports_volleyball">sports_volleyball</span>
+                <span class="text-white font-black italic text-2xl font-inter uppercase">SPIKE ELITE</span>
+            </div>
+            <nav class="flex flex-wrap justify-center gap-8">
+                <a class="font-inter font-bold uppercase tracking-widest text-xs text-blue-100 opacity-80 hover:opacity-100 hover:text-orange-400 transition-colors"
+                    href="./profil.html">PROFILE</a>
+                <a class="font-inter font-bold uppercase tracking-widest text-xs text-blue-100 opacity-80 hover:opacity-100 hover:text-orange-400 transition-colors"
+                    href="./galleriy.html">GALLERY</a>
+                <a class="font-inter font-bold uppercase tracking-widest text-xs text-blue-100 opacity-80 hover:opacity-100 hover:text-orange-400 transition-colors"
+                    href="index">index</a>
+                <a class="font-inter font-bold uppercase tracking-widest text-xs text-blue-100 opacity-80 hover:opacity-100 hover:text-orange-400 transition-colors"
+                    href="./contact.html">CONTACT</a>
+            </nav>
+            <div class="text-center md:text-right">
+                <p class="font-inter font-bold uppercase tracking-widest text-[10px] text-blue-100 opacity-60">© 2024
+                    VOLLEYBALL ELITE. POWERED BY PRECISION.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
